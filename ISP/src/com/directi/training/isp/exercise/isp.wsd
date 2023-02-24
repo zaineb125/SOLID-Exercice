@@ -1,0 +1,22 @@
+@startuml
+interface ISensing 
+ISensing :  proximityCallback()
+interface ITimed
+ITimed : timeOutCallback()
+Class SensingDoor
+Class TimedDoor
+Class Sensor 
+Class Timer 
+interface Door 
+Door : close()
+Door : open()
+Door : unlock() 
+Door : lock()
+
+ISensing --|> Door
+ITimed --|> Door
+Sensor ..> ISensing
+Timer ..> ITimed 
+SensingDoor ..|> ISensing
+TimedDoor ..|> ITimed
+@enduml

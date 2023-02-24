@@ -1,0 +1,15 @@
+@startuml
+interface IDatabase
+IDatabase : write()
+Class MyDatabase 
+MyDatabase ..|> IDatabase
+
+Class EncodingModuleClient 
+Class EncodingModule
+EncodingModule : encodeWithFiles()
+EncodingModule : encodeBasedOnNetworkAndDatabase()
+
+EncodingModuleClient --> EncodingModule
+EncodingModule ..> IDatabase
+
+@enduml

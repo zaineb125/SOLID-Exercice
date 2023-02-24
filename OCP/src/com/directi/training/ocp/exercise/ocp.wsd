@@ -1,0 +1,15 @@
+@startuml
+interface Ressource 
+Ressource : findSlot()
+Ressource : markFree(int resourceId)
+Ressource : markBusy(int resourceId)
+Class SpaceRessource 
+Class TimeRessource
+Class RessourceAllocator 
+RessourceAllocator : allocate()
+RessourceAllocator : free()
+
+SpaceRessource ..|> Ressource
+TimeRessource ..|> Ressource
+RessourceAllocator ..> Ressource
+@enduml

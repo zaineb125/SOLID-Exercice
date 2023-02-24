@@ -1,0 +1,18 @@
+@startuml
+abstract Class GenericDuck 
+GenericDuck : quack()
+GenericDuck : swim()
+GenericDuck : turnOn()
+GenericDuck : turnOff()
+Class ElectronicDuck
+Class Duck
+Class Pool 
+Pool : swim()
+Pool : quack()
+Pool : turnOn()
+
+Duck ..|> GenericDuck
+ElectronicDuck ..|> GenericDuck
+Pool --> GenericDuck
+
+@enduml
